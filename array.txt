@@ -1,0 +1,122 @@
+1. What do you mean by an Array?
+
+An array in Java is a data structure that can store a fixed-size sequence of elements of the same type. Arrays allow you to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+For example, you can use an array to store a collection of numbers, strings, or objects. The elements of an array are stored in contiguous memory locations and are indexed starting from 0.
+
+2. How to create an Array?
+
+In Java, an array can be created using the following syntax:
+
+Syntax:
+
+java
+Copy code
+dataType[] arrayName = new dataType[size];
+Where:
+
+dataType is the type of elements (e.g., int, String).
+arrayName is the name of the array.
+size is the number of elements the array can hold.
+Example:
+
+java
+Copy code
+int[] numbers = new int[5];  // Array of 5 integers
+Alternatively, you can initialize an array with values like this:
+
+java
+Copy code
+int[] numbers = {1, 2, 3, 4, 5};  // Array initialized with values
+3. Can we change the size of an array at run time?
+
+No, the size of an array in Java is fixed once it is created. Arrays are of fixed length, and this length cannot be changed after the array has been initialized.
+
+However, you can create a new array with a different size and copy the elements from the old array to the new one if you need to resize the array.
+
+Example of resizing an array:
+
+java
+Copy code
+int[] oldArray = {1, 2, 3};
+int[] newArray = new int[5]; // Create a new array with a larger size
+
+// Copy elements from oldArray to newArray
+System.arraycopy(oldArray, 0, newArray, 0, oldArray.length);
+4. Can you declare an array without assigning the size of an array?
+
+Yes, you can declare an array without assigning its size, but you must initialize it later with a size or a list of values.
+
+Example (without size initially):
+
+java
+Copy code
+int[] numbers;  // Declaration without size
+numbers = new int[5];  // Initialization with size
+You can also declare and initialize an array in one statement with values:
+
+java
+Copy code
+int[] numbers = {1, 2, 3, 4, 5};  // Declaration and initialization
+5. What is the default value of Array?
+
+The default values for the elements in an array depend on the type of the array:
+
+For numeric types (int, float, double, long), the default value is 0.
+For boolean arrays, the default value is false.
+For reference types (e.g., String, Object), the default value is null.
+Example:
+
+java
+Copy code
+int[] arr = new int[5]; // Default values are 0
+System.out.println(arr[0]);  // Output: 0
+6. What is a 1D array with an example?
+
+A 1D array (also known as a single-dimensional array) is a simple array that holds a collection of values in a linear fashion, and it is accessed using a single index.
+
+Example:
+
+java
+Copy code
+// Declaration and initialization of a 1D array
+int[] numbers = {10, 20, 30, 40, 50};
+
+// Accessing array elements
+System.out.println(numbers[0]);  // Output: 10
+System.out.println(numbers[3]);  // Output: 40
+In this example, numbers is a 1D array containing five integers, and elements are accessed using indices starting from 0.
+
+7. Write a program on a 2D array?
+
+A 2D array (two-dimensional array) is an array of arrays. It can be thought of as a table with rows and columns. The elements of a 2D array are accessed using two indices: one for the row and one for the column.
+
+Example (2D array program):
+
+java
+Copy code
+public class Main {
+    public static void main(String[] args) {
+        // Declare and initialize a 2D array
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Print the 2D array (matrix)
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");  // Access each element
+            }
+            System.out.println();  // Newline after each row
+        }
+    }
+}
+Output:
+
+Copy code
+1 2 3 
+4 5 6 
+7 8 9 
+In this example, matrix is a 2D array with 3 rows and 3 columns. We use nested loops to traverse through the rows and columns of the array.
